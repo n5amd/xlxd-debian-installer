@@ -4,7 +4,7 @@ This script simply runs through the official install instructions found [HERE](h
 
 ### To Install:
 1. Have a fresh Debian 9.x computer ready and up to date.
-2. Have both a FQDN and XRF # in mind before begining.
+2. Have both a FQDN and XRF # in mind before beginning.
 3. 
 ```sh
 git clone https://github.com/n5amd/xlxd-debian-installer
