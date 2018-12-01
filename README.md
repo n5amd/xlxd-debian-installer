@@ -22,4 +22,5 @@ systemctl start|stop|status|restart xlxd
  - Be sure to restart xlxd after each config change *'systemctl restart xlxd'*
 
 **For more information, please visit:**
+
 https://sadigitalradio.com/digital-radio-how-tos/create-xlx-xrf-d-star-reflector/
