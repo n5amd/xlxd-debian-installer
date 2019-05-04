@@ -23,4 +23,4 @@ systemctl start|stop|status|restart xlxd
 
 **For more information, please visit:**
 
-https://sadigitalradio.com/digital-radio-how-tos/create-xlx-xrf-d-star-reflector/
+https://n5amd.com/digital-radio-how-tos/create-xlx-xrf-d-star-reflector/
