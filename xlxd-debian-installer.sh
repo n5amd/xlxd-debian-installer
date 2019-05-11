@@ -1,6 +1,6 @@
 #!/bin/bash
 # A tool to install xlxd, your own D-Star Reflector.
-# For more information, please visit: https://sadigitalradio.com
+# For more information, please visit: https://n5amd.com
 #Lets begin-------------------------------------------------------------------------------------------------
 WHO=$(whoami)
 if [ "$WHO" != "root" ]
@@ -17,7 +17,7 @@ then
 fi
 DIRDIR=$(pwd)
 LOCAL_IP=$(ip a | grep inet | grep "eth0\|en" | awk '{print $2}' | tr '/' ' ' | awk '{print $1}')
-SADREF=https://sadigitalradio.com/digital-radio-how-tos/create-xlx-xrf-d-star-reflector/
+INFREF=https://n5amd.com/digital-radio-how-tos/create-xlx-xrf-d-star-reflector/
 XLXDREPO=https://github.com/LX3JL/xlxd.git
 DMRIDURL=http://xlxapi.rlx.lu/api/exportdmr.php
 WEBDIR=/var/www/xlxd
@@ -85,7 +85,7 @@ echo "--------------------------------------------------------------------------
 echo "Copying web dashboard files and updating init script... "
 cp -R $XLXINSTDIR/xlxd/dashboard/* /var/www/xlxd/
 cp $XLXINSTDIR/xlxd/scripts/xlxd /etc/init.d/xlxd
-sed -i "s/ARGUMENTS=\"XLX270 158.64.26.132\"/ARGUMENTS=\"XLX$XRFDIGIT $LOCAL_IP 127.0.0.1\"/g" /etc/init.d/xlxd
+sed -i "s/ARGUMENTS=\"XLX270 158.64.26.132\"/ARGUMENTS=\"$XFRNUM $LOCAL_IP 127.0.0.1\"/g" /etc/init.d/xlxd
 update-rc.d xlxd defaults
 echo "Updating XLXD Config file... "
 XLXCONFIG=/var/www/xlxd/pgs/config.inc.php
@@ -116,7 +116,7 @@ echo "If you are requesting this reflector be added to all the pi-star host file
 echo "a full time searchable reflector, you will need to request it on the xref forum"
 echo "boards."
 echo "Once activated, the callinghome hash to backup will be in /xlxd/callinghome.php"
-echo "More Information: $SADREF"
+echo "More Information: $INFREF"
 echo ""
 echo ""
 echo " For test/private Reflectors: "
