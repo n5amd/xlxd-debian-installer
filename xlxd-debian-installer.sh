@@ -98,8 +98,8 @@ cp $DIRDIR/templates/apache.tbd.conf /etc/apache2/sites-available/$XLXDOMAIN.con
 sed -i "s/apache.tbd/$XLXDOMAIN/g" /etc/apache2/sites-available/$XLXDOMAIN.conf
 sed -i "s/ysf-xlxd/xlxd/g" /etc/apache2/sites-available/$XLXDOMAIN.conf
 a2ensite $XLXDOMAIN
-systemctl reload apache2
 service xlxd start
+systemctl restart apache2
 echo "------------------------------------------------------------------------------"
 echo ""
 echo ""
@@ -112,9 +112,9 @@ echo ""
 echo "******************************************************************************"
 echo ""
 echo " For Public Reflectors: "
-echo "If you are requesting this reflector be added to all the pi-star host files as"
-echo "a full time searchable reflector, you will need to request it on the xref forum"
-echo "boards."
+echo "If your XLX number is not already taken, enabling callinghome is all you need  "
+echo "to do, for your reflector to be added to all the host files automatically. It does  "
+echo "take about an hour for the change to reflect, if your reflector is working right."
 echo "Once activated, the callinghome hash to backup will be in /xlxd/callinghome.php"
 echo "More Information: $INFREF"
 echo ""
