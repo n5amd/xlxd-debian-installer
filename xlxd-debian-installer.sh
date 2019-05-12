@@ -97,6 +97,7 @@ echo "Copying directives and reloading apache... "
 cp $DIRDIR/templates/apache.tbd.conf /etc/apache2/sites-available/$XLXDOMAIN.conf
 sed -i "s/apache.tbd/$XLXDOMAIN/g" /etc/apache2/sites-available/$XLXDOMAIN.conf
 sed -i "s/ysf-xlxd/xlxd/g" /etc/apache2/sites-available/$XLXDOMAIN.conf
+chown -R www-data: /var/www/xlxd/
 a2ensite $XLXDOMAIN
 service xlxd start
 systemctl restart apache2
