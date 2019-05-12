@@ -87,6 +87,8 @@ cp -R $XLXINSTDIR/xlxd/dashboard/* /var/www/xlxd/
 cp $XLXINSTDIR/xlxd/scripts/xlxd /etc/init.d/xlxd
 sed -i "s/ARGUMENTS=\"XLX270 158.64.26.132\"/ARGUMENTS=\"$XFRNUM $LOCAL_IP 127.0.0.1\"/g" /etc/init.d/xlxd
 update-rc.d xlxd defaults
+# Delaying startup time
+mv /etc/rc3.d/S01xlxd /etc/rc3.d/S10xlxd
 echo "Updating XLXD Config file... "
 XLXCONFIG=/var/www/xlxd/pgs/config.inc.php
 sed -i "s/your_email/$EMAIL/g" $XLXCONFIG
