@@ -1,5 +1,5 @@
 # xlxd-debian-installer
-This script simply runs through the official install instructions found [HERE](https://github.com/LX3JL/xlxd). It will install your own D-Star reflector along with setting up the web dashboards to view real-time activity. It can be used to install a private or a public D-Star XRF Reflector online or offline.
+This script simply runs through the official install instructions found [HERE](https://github.com/LX3JL/xlxd). It will install your own D-Star or DMR reflector along with setting up the web dashboards to view real-time activity. It can be used to install a private or a public D-Star or DMR XLX Reflector.
 
 
 ### To Install:
