@@ -22,7 +22,7 @@ XLXDREPO=https://github.com/LX3JL/xlxd.git
 DMRIDURL=http://xlxapi.rlx.lu/api/exportdmr.php
 WEBDIR=/var/www/xlxd
 XLXINSTDIR=/root/reflector-install-files/xlxd
-DEP="git build-essential apache2 php libapache2-mod-php php7.0-mbstring"
+DEP="git build-essential apache2 php libapache2-mod-php php7.3-mbstring"
 clear
 echo ""
 echo "XLX uses 3 digit numbers for its reflectors. For example: 032, 999, 099."
@@ -46,7 +46,7 @@ mkdir -p $XLXINSTDIR
 mkdir -p $WEBDIR
 apt-get update
 apt-get -y install $DEP
-a2enmod php7.0
+a2enmod php7.3
 echo "------------------------------------------------------------------------------"
 if [ -e $XLXINSTDIR/xlxd/src/xlxd ]
 then
