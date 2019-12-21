@@ -27,7 +27,7 @@ clear
 echo ""
 echo "XLX uses 3 digit numbers for its reflectors. For example: 032, 999, 099."
 read -p "What 3 digit XRF number will you be using?  " XRFDIGIT
-XFRNUM=XLX$XRFDIGIT
+XRFNUM=XLX$XRFDIGIT
 echo ""
 echo "--------------------------------------"
 read -p "What is the FQDN of the XLX Reflector dashboard? Example: xlx.domain.com.  " XLXDOMAIN
@@ -85,7 +85,7 @@ echo "--------------------------------------------------------------------------
 echo "Copying web dashboard files and updating init script... "
 cp -R $XLXINSTDIR/xlxd/dashboard/* /var/www/xlxd/
 cp $XLXINSTDIR/xlxd/scripts/xlxd /etc/init.d/xlxd
-sed -i "s/ARGUMENTS=\"XLX999 192.168.1.240\"/ARGUMENTS=\"$XFRNUM $LOCAL_IP 127.0.0.1\"/g" /etc/init.d/xlxd
+sed -i "s/XLX999 192.168.1.240 127.0.0.1/$XRFNUM $LOCAL_IP 127.0.0.1/g" /etc/init.d/xlxd
 update-rc.d xlxd defaults
 # Delaying startup time
 mv /etc/rc3.d/S01xlxd /etc/rc3.d/S10xlxd
@@ -129,7 +129,7 @@ echo "need to configure the host files of the devices connecting to this server.
 echo "There are many online tutorials on 'Editing pi-star host files'.          "
 echo ""
 echo ""
-echo "          Your $XFRNUM dashboad should now be accessible...            "
+echo "          Your $XRFNUM dashboad should now be accessible...            "
 echo "                http://$XLXDOMAIN                                      "
 echo ""
 echo ""
