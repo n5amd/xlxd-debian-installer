@@ -1,5 +1,7 @@
 # xlxd-debian-installer
-This script simply runs through the official install instructions found [HERE](https://github.com/LX3JL/xlxd). It will install your own D-Star or DMR reflector along with setting up the web dashboards to view real-time activity. It can be used to install a private or a public D-Star or DMR XLX Reflector.
+This script simply runs through the official install instructions found [HERE](https://github.com/LX3JL/xlxd). The script will install XLX along with setting up the web dashboard to view real-time activity. After installing this you will have a private or public D-Star, DMR, and YSF XLX Reflector.
+
+At the start of 2020 a new version of XLX was released that allows for native C4FM connections. This means it's even simpler to run a multi-mode reflector. XLX now natively supports DMR, D-Star, and C4FM. C4FM and DMR do not require any transcoding hardware (AMBE) to work together. If you plan on using D-Star with any of the other modes, you will need hardware AMBE chips.
 
 
 ### To Install:
