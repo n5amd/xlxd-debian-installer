@@ -50,11 +50,12 @@ apt-get update
 if [ $VERSION = 9 ]
 then
     apt-get -y install $DEP
+    a2enmod php7.0
 elif [ $VERSION = 10 ]
 then
     apt-get -y install $DEP2
 fi
-a2enmod php7.0
+
 echo "------------------------------------------------------------------------------"
 if [ -e $XLXINSTDIR/xlxd/src/xlxd ]
 then
