@@ -24,6 +24,7 @@ WEBDIR=/var/www/xlxd
 XLXINSTDIR=/root/reflector-install-files/xlxd
 DEP="git build-essential apache2 php libapache2-mod-php php7.0-mbstring"
 DEP2="git build-essential apache2 php libapache2-mod-php php7.3-mbstring"
+DEP3="git build-essential apache2 php libapache2-mod-php php7.4-mbstring"
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 clear
 echo ""
@@ -54,6 +55,9 @@ then
 elif [ $VERSION = 10 ]
 then
     apt-get -y install $DEP2
+elif [ $VERSION = 11 ]
+then
+    apt-get -y install $DEP3
 fi
 
 echo "------------------------------------------------------------------------------"
