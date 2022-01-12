@@ -101,7 +101,7 @@ cp $XLXINSTDIR/xlxd/scripts/xlxd /etc/init.d/xlxd
 sed -i "s/XLX999 192.168.1.240 127.0.0.1/$XRFNUM $LOCAL_IP 127.0.0.1/g" /etc/init.d/xlxd
 update-rc.d xlxd defaults
 # Delaying startup time
-mv /etc/rc3.d/S01xlxd /etc/rc3.d/S10xlxd
+# mv /etc/rc3.d/S01xlxd /etc/rc3.d/S10xlxd ##Disabling as its not really needed. 
 echo "Updating XLXD Config file... "
 XLXCONFIG=/var/www/xlxd/pgs/config.inc.php
 sed -i "s/your_email/$EMAIL/g" $XLXCONFIG
