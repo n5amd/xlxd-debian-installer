@@ -12,7 +12,7 @@ fi
 if [ ! -e "/etc/debian_version" ]
 then
   echo ""
-  echo "This script is only tested in Debian 9 and x64 cpu Arch. "
+  echo "This script is only tested on Debian and x64 CPU Arch. but XLX will work on most ANY Linux distro. "
   exit 0
 fi
 DIRDIR=$(pwd)
@@ -25,6 +25,7 @@ XLXINSTDIR=/root/reflector-install-files/xlxd
 DEP="git build-essential apache2 php libapache2-mod-php php7.0-mbstring"
 DEP2="git build-essential apache2 php libapache2-mod-php php7.3-mbstring"
 DEP3="git build-essential apache2 php libapache2-mod-php php7.4-mbstring"
+APPS="git git-core apache2 php libapache2-mod-php php-cli php-xml php-mbstring php-curl build-essential"
 VERSION=$(sed 's/\..*//' /etc/debian_version)
 clear
 echo ""
@@ -48,17 +49,18 @@ echo "--------------------------------------------------------------------------
 mkdir -p $XLXINSTDIR
 mkdir -p $WEBDIR
 apt-get update
-if [ $VERSION = 9 ]
-then
-    apt-get -y install $DEP
-    a2enmod php7.0
-elif [ $VERSION = 10 ]
-then
-    apt-get -y install $DEP2
-elif [ $VERSION = 11 ]
-then
-    apt-get -y install $DEP3
-fi
+apt-get install $APPS
+#if [ $VERSION = 9 ]
+#then
+#    apt-get -y install $DEP
+#    a2enmod php7.0
+#elif [ $VERSION = 10 ]
+#then
+#    apt-get -y install $DEP2
+#elif [ $VERSION = 11 ]
+#then
+#    apt-get -y install $DEP3
+#fi
 
 echo "------------------------------------------------------------------------------"
 if [ -e $XLXINSTDIR/xlxd/src/xlxd ]
