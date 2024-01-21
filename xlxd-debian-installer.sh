@@ -117,6 +117,7 @@ sed -i "s/ysf-xlxd/xlxd/g" /etc/apache2/sites-available/$XLXDOMAIN.conf
 chown -R www-data:www-data /var/www/xlxd/
 chown -R www-data:www-data /xlxd/
 a2ensite $XLXDOMAIN
+a2dissite 000-default
 service xlxd start
 systemctl restart apache2
 echo "------------------------------------------------------------------------------"
