@@ -48,8 +48,8 @@ echo "Making install directories and installing dependicies...."
 echo "------------------------------------------------------------------------------"
 mkdir -p $XLXINSTDIR
 mkdir -p $WEBDIR
-apt-get update
-apt-get install $APPS
+apt-get -y update
+apt-get -y install $APPS
 #if [ $VERSION = 9 ]
 #then
 #    apt-get -y install $DEP
